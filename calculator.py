@@ -18,7 +18,7 @@ import selenium
 from bs4 import BeautifulSoup as BS
 import getpass
 
-class WebVPN:
+class GPACalculator:
     def __init__(self, opt: dict, headless=False):
         self.root_handle = None
         self.driver: wd = None
@@ -162,7 +162,7 @@ class WebVPN:
 if __name__ == "__main__":
     userid = input('用户名：')
     passwd = getpass.getpass('密码：')
-    calculator = WebVPN({"username": userid, "password": passwd})
+    calculator = GPACalculator({"username": userid, "password": passwd})
     calculator.login_webvpn()
     calculator.login_info()
     calculator.get_grades()
